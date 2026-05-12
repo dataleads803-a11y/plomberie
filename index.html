@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plomberie d'Excellence | Artisanat de Luxe & Dépannage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37; 
+            --gold-dark: #AA8418;
+            --dark: #0F1115; 
+            --dark-accent: #1A1D23;
+            --white: #FFFFFF; 
+            --muted: #A0AEC0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: var(--dark); 
+            color: var(--white); 
+            line-height: 1.6; 
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        header { 
+            padding: 20px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background: rgba(15, 17, 21, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212,175,55,0.1);
+        }
+        .logo { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.6rem; font-weight: 900; letter-spacing: 1px; }
+        .urgent-call { 
+            color: var(--gold); 
+            font-weight: 600; 
+            text-decoration: none; 
+            border: 2px solid var(--gold); 
+            padding: 10px 25px; 
+            border-radius: 4px; 
+            transition: 0.4s;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+        .urgent-call:hover { background: var(--gold); color: var(--dark); }
+
+        /* Hero Section avec Image de Fond */
+        .hero { 
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2070&auto=format&fit=crop'); 
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 450px;
+            gap: 60px;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: clamp(2.5rem, 6vw, 4.5rem); 
+            line-height: 1.1; 
+            margin-bottom: 25px; 
+        }
+        .hero-content h1 span { color: var(--gold); }
+        .hero-text { font-size: 1.2rem; color: #E2E8F0; margin-bottom: 40px; max-width: 600px; }
+
+        /* Formulaire Premium */
+        .form-container { 
+            background: rgba(26, 29, 35, 0.95); 
+            padding: 45px; 
+            border-radius: 4px; 
+            border-top: 5px solid var(--gold);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+        }
+        .form-container h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 25px; text-align: center; }
+        
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; color: var(--gold); font-weight: 600; }
+        input, select, textarea { 
+            width: 100%; padding: 14px; 
+            background: #0F1115; 
+            border: 1px solid #30363D; 
+            border-radius: 2px; 
+            color: white; 
+            outline: none;
+            transition: 0.3s;
+        }
+        input:focus { border-color: var(--gold); }
+        
+        .submit-btn { 
+            width: 100%; padding: 18px; 
+            background: var(--gold); 
+            border: none; 
+            color: var(--dark); 
+            font-weight: 800; 
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer; 
+            transition: 0.3s; 
+        }
+        .submit-btn:hover { background: var(--white); }
+
+        /* Section Services avec Images */
+        .services { padding: 100px 5%; background: var(--dark); }
+        .section-header { text-align: center; margin-bottom: 70px; }
+        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--white); }
+        .section-header div { width: 60px; height: 3px; background: var(--gold); margin: 20px auto; }
+
+        .grid-services { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+            gap: 30px; 
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card { 
+            background: var(--dark-accent); 
+            overflow: hidden;
+            border-radius: 4px;
+            transition: 0.4s;
+        }
+        .service-card:hover { transform: translateY(-10px); }
+        .service-img { 
+            width: 100%; 
+            height: 250px; 
+            object-fit: cover; 
+            filter: grayscale(30%);
+            transition: 0.5s;
+        }
+        .service-card:hover .service-img { filter: grayscale(0%); transform: scale(1.05); }
+        .service-info { padding: 30px; }
+        .service-info h3 { font-family: 'Playfair Display', serif; margin-bottom: 15px; color: var(--gold); font-size: 1.5rem; }
+        .service-info p { color: var(--muted); font-size: 0.95rem; }
+
+        /* Responsive */
+        @media (max-width: 1100px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .hero { padding: 80px 5%; }
+            .hero-content { text-align: center; }
+            .hero-text { margin: 0 auto 40px; }
+            .form-container { max-width: 500px; margin: 0 auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">LUXE<span>PLOMBERIE</span></div>
+        <a href="tel:#" class="urgent-call">Urgence 24h/7j</a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <h1>L'excellence technique au service de votre <span>confort</span>.</h1>
+                <p class="hero-text">Interventions certifiées, matériaux de prestige et garantie décennale. Nous redéfinissons les standards de la plomberie haute performance.</p>
+                
+                <div style="display: flex; gap: 30px; margin-top: 50px;">
+                    <div><span style="color: var(--gold); font-size: 1.5rem; font-weight: 700;">30min</span><br><small style="color: var(--muted)">Délai d'intervention</small></div>
+                    <div style="width: 1px; background: rgba(255,255,255,0.1);"></div>
+                    <div><span style="color: var(--gold); font-size: 1.5rem; font-weight: 700;">100%</span><br><small style="color: var(--muted)">Satisfaction Garantie</small></div>
+                </div>
+            </div>
+
+            <div class="form-container">
+                <h3>Votre Devis Express</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label>Nom & Prénom</label>
+                        <input type="text" name="nom" placeholder="M. Jean Dupont" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Téléphone Urgent</label>
+                        <input type="tel" name="telephone" placeholder="06 . . . . . . . ." required>
+                    </div>
+                    <div class="form-group">
+                        <label>Nature du besoin</label>
+                        <select name="service">
+                            <option>Dépannage Fuite / Panne</option>
+                            <option>Installation Sanitaire Luxe</option>
+                            <option>Entretien Chauffage</option>
+                            <option>Rénovation Complète</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Code Postal</label>
+                        <input type="text" name="cp" placeholder="75000" required>
+                    </div>
+                    <button type="submit" class="submit-btn" id="submitBtn">Obtenir une expertise</button>
+                </form>
+                <div id="successMsg" style="display:none; text-align:center; color: var(--gold); margin-top: 20px;">
+                    ✅ Merci. Un technicien vous contacte immédiatement.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="section-header">
+            <h2>Services de Haute Facture</h2>
+            <div></div>
+        </div>
+        
+        <div class="grid-services">
+            <!-- Service 1 -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1620629761511-fb0915f76251?q=80&w=2070&auto=format&fit=crop" alt="Salle de bain luxe" class="service-img">
+                <div class="service-info">
+                    <h3>Salles de Bain d'Exception</h3>
+                    <p>Création d'espaces bien-être avec pose de robinetterie haut de gamme et finitions invisibles.</p>
+                </div>
+            </div>
+            
+            <!-- Service 2 -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1504148455328-497c596d2158?q=80&w=2034&auto=format&fit=crop" alt="Outillage précision" class="service-img">
+                <div class="service-info">
+                    <h3>Dépannage Haute Précision</h3>
+                    <p>Réparation de fuites complexes et débouchage haute pression sans altérer vos structures.</p>
+                </div>
+            </div>
+            
+            <!-- Service 3 -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ec3?q=80&w=2070&auto=format&fit=crop" alt="Chauffage" class="service-img">
+                <div class="service-info">
+                    <h3>Systèmes Thermiques</h3>
+                    <p>Optimisation de votre confort thermique avec des solutions connectées et écologiques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const SCRIPT_URL = 'TON_URL_ICI'; // REMPLACER PAR TON URL DE DEPLOIEMENT
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            btn.innerHTML = "Transmission...";
+            btn.disabled = true;
+
+            const formData = new FormData(this);
+
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: formData
+            })
+            .then(() => {
+                this.style.display = 'none';
+                document.getElementById('successMsg').style.display = 'block';
+            })
+            .catch(() => {
+                alert("Erreur réseau. Veuillez réessayer.");
+                btn.disabled = false;
+                btn.innerHTML = "Obtenir une expertise";
+            });
+        });
+    </script>
+</body>
+</html>
