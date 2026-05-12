@@ -24,7 +24,6 @@
             overflow-x: hidden;
         }
         
-        /* Header */
         header { 
             padding: 20px 5%; 
             display: flex; 
@@ -50,7 +49,7 @@
         }
         .urgent-call:hover { background: var(--gold); color: var(--dark); }
 
-        /* Hero Section avec Image de Fond */
+        /* Hero Section avec Image de Fond Salle de Bain Luxe */
         .hero { 
             position: relative;
             min-height: 90vh;
@@ -58,7 +57,7 @@
             align-items: center;
             padding: 0 5%;
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2070&auto=format&fit=crop'); 
+                        url('https://images.pexels.com/photos/6045330/pexels-photo-6045330.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); 
             background-size: cover;
             background-position: center;
         }
@@ -81,7 +80,6 @@
         .hero-content h1 span { color: var(--gold); }
         .hero-text { font-size: 1.2rem; color: #E2E8F0; margin-bottom: 40px; max-width: 600px; }
 
-        /* Formulaire Premium */
         .form-container { 
             background: rgba(26, 29, 35, 0.95); 
             padding: 45px; 
@@ -89,7 +87,6 @@
             border-top: 5px solid var(--gold);
             box-shadow: 0 30px 60px rgba(0,0,0,0.8);
         }
-        .form-container h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 25px; text-align: center; }
         
         .form-group { margin-bottom: 20px; }
         label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; color: var(--gold); font-weight: 600; }
@@ -100,9 +97,7 @@
             border-radius: 2px; 
             color: white; 
             outline: none;
-            transition: 0.3s;
         }
-        input:focus { border-color: var(--gold); }
         
         .submit-btn { 
             width: 100%; padding: 18px; 
@@ -117,11 +112,10 @@
         }
         .submit-btn:hover { background: var(--white); }
 
-        /* Section Services avec Images */
+        /* Services Section */
         .services { padding: 100px 5%; background: var(--dark); }
         .section-header { text-align: center; margin-bottom: 70px; }
-        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--white); }
-        .section-header div { width: 60px; height: 3px; background: var(--gold); margin: 20px auto; }
+        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 3rem; }
 
         .grid-services { 
             display: grid; 
@@ -137,26 +131,19 @@
             border-radius: 4px;
             transition: 0.4s;
         }
-        .service-card:hover { transform: translateY(-10px); }
         .service-img { 
             width: 100%; 
-            height: 250px; 
+            height: 280px; 
             object-fit: cover; 
-            filter: grayscale(30%);
-            transition: 0.5s;
+            display: block;
         }
-        .service-card:hover .service-img { filter: grayscale(0%); transform: scale(1.05); }
         .service-info { padding: 30px; }
-        .service-info h3 { font-family: 'Playfair Display', serif; margin-bottom: 15px; color: var(--gold); font-size: 1.5rem; }
-        .service-info p { color: var(--muted); font-size: 0.95rem; }
+        .service-info h3 { font-family: 'Playfair Display', serif; margin-bottom: 15px; color: var(--gold); }
 
-        /* Responsive */
         @media (max-width: 1100px) {
             .hero-grid { grid-template-columns: 1fr; }
-            .hero { padding: 80px 5%; }
             .hero-content { text-align: center; }
             .hero-text { margin: 0 auto 40px; }
-            .form-container { max-width: 500px; margin: 0 auto; }
         }
     </style>
 </head>
@@ -164,51 +151,45 @@
 
     <header>
         <div class="logo">LUXE<span>PLOMBERIE</span></div>
-        <a href="tel:#" class="urgent-call">Urgence 24h/7j</a>
+       
     </header>
 
     <section class="hero">
         <div class="hero-grid">
             <div class="hero-content">
-                <h1>L'excellence technique au service de votre <span>confort</span>.</h1>
-                <p class="hero-text">Interventions certifiées, matériaux de prestige et garantie décennale. Nous redéfinissons les standards de la plomberie haute performance.</p>
+                <h1>L'excellence technique pour votre <span>confort</span>.</h1>
+                <p class="hero-text">Interventions certifiées et garantie décennale. Nous redéfinissons les standards de la plomberie haute performance.</p>
                 
                 <div style="display: flex; gap: 30px; margin-top: 50px;">
                     <div><span style="color: var(--gold); font-size: 1.5rem; font-weight: 700;">30min</span><br><small style="color: var(--muted)">Délai d'intervention</small></div>
                     <div style="width: 1px; background: rgba(255,255,255,0.1);"></div>
-                    <div><span style="color: var(--gold); font-size: 1.5rem; font-weight: 700;">100%</span><br><small style="color: var(--muted)">Satisfaction Garantie</small></div>
+                    <div><span style="color: var(--gold); font-size: 1.5rem; font-weight: 700;">100%</span><br><small style="color: var(--muted)">Satisfaction</small></div>
                 </div>
             </div>
 
             <div class="form-container">
-                <h3>Votre Devis Express</h3>
+                <h3 style="margin-bottom:20px; font-family: 'Playfair Display'; text-align: center;">DEVIS EXPRESS</h3>
                 <form id="contactForm">
                     <div class="form-group">
                         <label>Nom & Prénom</label>
-                        <input type="text" name="nom" placeholder="M. Jean Dupont" required>
+                        <input type="text" name="nom" placeholder="Jean Dupont" required>
                     </div>
                     <div class="form-group">
                         <label>Téléphone Urgent</label>
                         <input type="tel" name="telephone" placeholder="06 . . . . . . . ." required>
                     </div>
                     <div class="form-group">
-                        <label>Nature du besoin</label>
+                        <label>Service</label>
                         <select name="service">
                             <option>Dépannage Fuite / Panne</option>
                             <option>Installation Sanitaire Luxe</option>
                             <option>Entretien Chauffage</option>
-                            <option>Rénovation Complète</option>
-                            <option>Autre</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label>Code Postal</label>
-                        <input type="text" name="cp" placeholder="75000" required>
-                    </div>
-                    <button type="submit" class="submit-btn" id="submitBtn">Obtenir une expertise</button>
+                    <button type="submit" class="submit-btn" id="submitBtn">Vérifier la disponibilité</button>
                 </form>
                 <div id="successMsg" style="display:none; text-align:center; color: var(--gold); margin-top: 20px;">
-                    ✅ Merci. Un technicien vous contacte immédiatement.
+                    ✅ Un expert vous rappelle d'ici 10 minutes.
                 </div>
             </div>
         </div>
@@ -216,42 +197,42 @@
 
     <section class="services">
         <div class="section-header">
-            <h2>Services de Haute Facture</h2>
-            <div></div>
+            <h2>Nos Expertises</h2>
+            <div style="width: 60px; height: 3px; background: var(--gold); margin: 20px auto;"></div>
         </div>
         
         <div class="grid-services">
-            <!-- Service 1 -->
             <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1620629761511-fb0915f76251?q=80&w=2070&auto=format&fit=crop" alt="Salle de bain luxe" class="service-img">
+                <!-- Image de Robinetterie / SDB Luxe -->
+                <img src="https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=600" class="service-img">
                 <div class="service-info">
                     <h3>Salles de Bain d'Exception</h3>
-                    <p>Création d'espaces bien-être avec pose de robinetterie haut de gamme et finitions invisibles.</p>
+                    <p>Création d'espaces bien-être avec pose de robinetterie haut de gamme.</p>
                 </div>
             </div>
             
-            <!-- Service 2 -->
             <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1504148455328-497c596d2158?q=80&w=2034&auto=format&fit=crop" alt="Outillage précision" class="service-img">
+                <!-- Image d'un Plombier au travail (Outils/Technique) -->
+                <img src="https://images.pexels.com/photos/209235/pexels-photo-209235.jpeg?auto=compress&cs=tinysrgb&w=600" class="service-img">
                 <div class="service-info">
-                    <h3>Dépannage Haute Précision</h3>
-                    <p>Réparation de fuites complexes et débouchage haute pression sans altérer vos structures.</p>
+                    <h3>Dépannage Précision</h3>
+                    <p>Réparation de fuites complexes sans altérer vos structures existantes.</p>
                 </div>
             </div>
             
-            <!-- Service 3 -->
             <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ec3?q=80&w=2070&auto=format&fit=crop" alt="Chauffage" class="service-img">
+                <!-- Image de Radiateur / Chauffage design -->
+                <img src="https://images.pexels.com/photos/3990359/pexels-photo-3990359.jpeg?auto=compress&cs=tinysrgb&w=600" class="service-img">
                 <div class="service-info">
-                    <h3>Systèmes Thermiques</h3>
-                    <p>Optimisation de votre confort thermique avec des solutions connectées et écologiques.</p>
+                    <h3>Confort Thermique</h3>
+                    <p>Optimisation de votre chauffage avec des solutions haute performance.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <script>
-        const SCRIPT_URL = 'TON_URL_ICI'; // REMPLACER PAR TON URL DE DEPLOIEMENT
+        const SCRIPT_URL = 'TON_URL_ICI';
 
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -259,21 +240,14 @@
             btn.innerHTML = "Transmission...";
             btn.disabled = true;
 
-            const formData = new FormData(this);
-
             fetch(SCRIPT_URL, {
                 method: 'POST',
                 mode: 'no-cors',
-                body: formData
+                body: new FormData(this)
             })
             .then(() => {
                 this.style.display = 'none';
                 document.getElementById('successMsg').style.display = 'block';
-            })
-            .catch(() => {
-                alert("Erreur réseau. Veuillez réessayer.");
-                btn.disabled = false;
-                btn.innerHTML = "Obtenir une expertise";
             });
         });
     </script>
